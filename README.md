@@ -25,3 +25,8 @@ python ribocone.ipynb  # or run in Jupyter
 ```
 
 Requires: `numpy`, `mrcfile`, `matplotlib`
+
+
+## LICENSE
+
+MIT
