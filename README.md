@@ -1,4 +1,4 @@
-# RiboMove
+# Chlororibo Cryo-ET
 
 Jupyter notebooks for ribosome-membrane orientation and polysome organization analysis used in [Chloroplast-encoded small subunit extensions reshape the Chlamydomonas chlororibosome](https://pubmed.ncbi.nlm.nih.gov/41727112/).
 
