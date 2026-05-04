@@ -2,15 +2,6 @@
 
 Jupyter notebooks for ribosome-membrane orientation and polysome organization analysis used for (Chloroplast-encoded small subunit extensions reshape the Chlamydomonas chlororibosome)[https://pubmed.ncbi.nlm.nih.gov/41727112/]
 
-## Contents
-
-```text
-ribomove/
-  ribocone.ipynb      # membrane-associated ribosome orientation analysis
-
-polysome/
-  poly.ipynb          # polysome detection from RELION STAR particles
-```
 
 ## Workflows
 
