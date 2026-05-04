@@ -20,7 +20,7 @@ Main steps:
   <img src="ribomove/movement_density_map.png" width="47%">
 </p>
 
-### 2. Polysome detection from RELION particles
+### 2. Polysome detection
 
 Notebook: `polysome/poly.ipynb`
 
