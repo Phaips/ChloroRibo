@@ -15,7 +15,7 @@ Main steps:
 - project 3D normal deviations onto a 2D tangent plane
 - plot membrane plane intersections and angular deviation density
 
-<p align="center">
+<p align="left">
   <img src="ribomove/membrane_plane_intersections.png" width="47%">
   <img src="ribomove/movement_density_map.png" width="47%">
 </p>
@@ -31,8 +31,8 @@ Main steps:
 - keep connected components with degree ≤ 2 (no ribosome in a polysome can have three neighbors)
 - plot tomogram map-backs, selected polysome examples, and chain-length distributions
 
-<p align="center">
-  <img src="polysome/polysome_details.png" width="85%">
+<p align="left">
+  <img src="polysome/polysome_details.png" width="47%">
 </p>
 
 ## Requirements
