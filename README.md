@@ -17,12 +17,6 @@ Main steps:
 - project 3D normal deviations onto a 2D tangent plane
 - plot membrane plane intersections and angular deviation density
 
-Inputs:
-- MRC class volumes named like `Membrane_class*.mrc`
-
-Outputs:
-- `membrane_plane_intersections.png`
-- `movement_density_map.png`
 
 ### 2. Polysome detection from RELION particles
 
