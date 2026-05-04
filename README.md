@@ -1,32 +1,72 @@
 # RiboMove
 
-Analysis of ribosome-membrane orientations from 3D classes.
+Jupyter notebooks for ribosome-membrane orientation and polysome organization analysis used for (Chloroplast-encoded small subunit extensions reshape the Chlamydomonas chlororibosome)[https://pubmed.ncbi.nlm.nih.gov/41727112/]
 
-## Method
+## Contents
 
-- **Membrane detection**: High-intensity pixels identified in an annular region using percentile thresholding
-- **Normal extraction**: In-plane orientation determined via PCA, through-plane tilt via linear regression across Z-slices
-- **Visualization**: Angular deviations projected onto 2D tangent plane and displayed as kernel density map
+```text
+ribomove/
+  ribocone.ipynb      # membrane-associated ribosome orientation analysis
 
-## Output
-
-The script generates:
-1. **Membrane plane intersections** - Red lines show the fitted membrane plane across Z-slices for each class
-2. **Movement density map** - Kernel density visualization of angular deviations from mean membrane orientation
-
-<p align="center">
-  <img src="imgs/membrane_plane_intersections.png" width="45%">
-  <img src="imgs/movement_density_map.png" width="45%">
-</p>
-
-## Usage
-```python
-python ribocone.ipynb  # or run in Jupyter
+polysome/
+  poly.ipynb          # polysome detection from RELION STAR particles
 ```
 
-Requires: `numpy`, `mrcfile`, `matplotlib`
+## Workflows
+
+### 1. Ribosome movement relative to membrane
+
+Notebook: `ribomove/ribocone.ipynb`
 
 
-## LICENSE
+Main steps:
+- detect membrane density in an annular region of each class volume
+- fit the in-plane membrane direction by PCA
+- estimate through-plane membrane tilt across Z-slices
+- project 3D normal deviations onto a 2D tangent plane
+- plot membrane plane intersections and angular deviation density
+
+Inputs:
+- MRC class volumes named like `Membrane_class*.mrc`
+
+Outputs:
+- `membrane_plane_intersections.png`
+- `movement_density_map.png`
+
+### 2. Polysome detection from RELION particles
+
+Notebook: `polysome/poly.ipynb`
+
+
+Main steps:
+- read ribosome coordinates and angles
+- build candidate ribosome-ribosome edges using KDTree distance search
+- filter neighbors by center-to-center distance and SO(3) orientation similarity
+- keep connected components with degree ≤ 2 (no ribosome in a polysome can have three neighbors)
+- plot tomogram map-backs, selected polysome examples, and chain-length distributions
+
+
+## Requirements
+
+```text
+numpy
+pandas
+matplotlib
+scipy
+starfile
+mrcfile
+jupyter
+```
+
+## Usage
+
+Open the notebooks in Jupyter and edit the parameter block at the top of each notebook:
+
+```bash
+jupyter notebook ribomove/ribocone.ipynb
+jupyter notebook polysome/poly.ipynb
+```
+
+## License
 
 MIT
